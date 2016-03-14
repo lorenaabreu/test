@@ -5,16 +5,43 @@ import java.util.List;
 import org.fiveware.test.model.Funcionario;
 
 
-public interface FuncionarioDao {
+/**
+ * Interface DAO
+ * @author Lorena Abreu
+ *
+ */
+public interface FuncionarioDao{
 
+	/**
+	 * @return
+	 */
+	List<Funcionario> encontrarTodosFuncionarios();
+	
+	/**
+	 * @param id
+	 * @return
+	 */
 	Funcionario encontrarPeloId(int id);
-
+	
+	/**
+	 * @param ctps
+	 * @return
+	 */
+	Funcionario encontrarFuncionarioPelaCtps(String ctps);
+	
+    /**
+     * @param funcionario
+     */
     void salvarFuncionario(Funcionario funcionario);
      
-    void deleteFuncionarioPelaCtps(String ctps);
-     
-    List<Funcionario> encontrarTodosFuncionarios();
- 
-    Funcionario encontrarFuncionarioPelaCtps(String ctps);
+    /**
+     * @param id
+     */
+    void deleteFuncionarioPeloId (int id);
+    
+    /**
+     * 
+     */
+    void deletarTodosFuncionarios();
 
 }

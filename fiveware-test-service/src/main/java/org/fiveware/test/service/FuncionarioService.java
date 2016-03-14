@@ -1,58 +1,69 @@
 package org.fiveware.test.service;
 
+
 import java.util.List;
 
 import org.fiveware.test.model.Funcionario;
 
 /**
- * @author Lole Abreu
+ * @author Lorena Abreu
  *
  */
 public interface FuncionarioService {
 
 	/**
+	 * @return
+	 */
+	List<Funcionario> encontrarTodosFuncionarios();
+	
+	/**
 	 * @param id
-	 * @return Funcionario
+	 * @return
 	 */
 	Funcionario encontrarPeloId(int id);
-
-    /**
-     * @param funcionario
-     */
-    void salvarFuncionario(Funcionario funcionario);
-          
-    /**
-     * @param funcionario
-     */
-    void updateFuncionario(Funcionario funcionario);
-     
-    /**
-     * @param ctps
-     */
-    void deleteFuncionarioPelaCtps(String ctps);
- 
-    /**
-     * @return List<Funcionario>
-     */
-    List<Funcionario> encontrarTodosFuncionarios();
+	
+	/**
+	 * @param ctps
+	 * @return
+	 */
+	Funcionario encontrarPelaCtps(String ctps);
+	
+	/**
+	 * @param nome
+	 * @return
+	 */
+	Funcionario encontrarPeloNome(String nome);
+	
+	/**
+	 * @param funcionario
+	 */
+	void salvarFuncionario(Funcionario funcionario);
     
-    /**
-     * @param ctps
-     * @return Funcionario
-     */
-    Funcionario encontrarFuncionarioPelaCtps(String ctps);
- 
-    /**
-     * @param id
-     * @param ctps
-     * @return boolean
-     */
-    boolean isFuncionarioCtpsUnica(Integer id, String ctps);
+	/**
+	 * @param funcionario
+	 */
+	void updateFuncionario(Funcionario funcionario);
     
-    
-    
-    
-     
-    
-
+	/**
+	 * @param funcionario
+	 * @return
+	 */
+	boolean isFuncionarioExiste(Funcionario funcionario);
+	
+	/**
+	 * @param funcionario
+	 * @return
+	 */
+	boolean isExisteCtps(Funcionario funcionario);
+	
+	/**
+	 * @param id
+	 */
+	void deleteFuncionarioPeloId (int id);
+	
+	/**
+	 * 
+	 */
+	void deletarTodosFuncionarios();
+	
 }

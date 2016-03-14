@@ -13,26 +13,6 @@
       .nome.ng-dirty.ng-invalid-minlength {
           background-color: yellow;
       }
-
-	  .dataContratacao.ng-valid {
-          background-color: lightgreen;
-      }
-      .dataContratacao.ng-dirty.ng-invalid-required {
-          background-color: red;
-      }
-      .dataContratacao.ng-dirty.ng-invalid-dataContratacao {
-          background-color: yellow;
-      }
-      
-      .salario.ng-valid {
-          background-color: lightgreen;
-      }
-      .salario.ng-dirty.ng-invalid-required {
-          background-color: red;
-      }
-      .salario.ng-dirty.ng-invalid-salario {
-          background-color: yellow;
-      }
       
       .ctps.ng-valid {
           background-color: lightgreen;
@@ -54,7 +34,11 @@
       .mesFavorito.ng-valid {
           background-color: lightgreen;
       }
-      .mesFavorito.ng-dirty.ng-invalid-required {
+      
+      .aceite.ng-valid {
+          background-color: lightgreen;
+      }
+      .aceite.ng-dirty.ng-invalid-required {
           background-color: red;
       }
       
@@ -84,64 +68,12 @@
                               </div>
                           </div>
                       </div>
-                        
                       
                       <div class="row">
                           <div class="form-group col-md-12">
-                              <label class="col-md-2 control-lable" for="dataContratacao">Data de Contratação</label>
+                              <label class="col-md-2 control-lable" for="ctps">Número CTPS</label>
                               <div class="col-md-7">
-                                  <input type="text" ng-model="ctrl.func.dataContratacao" id="dataContratacao" class="dataContratacao form-control input-sm" placeholder="Entre com a data de contratação" required/>
-                                  <div class="has-error" ng-show="myForm.$dirty">
-	                                  <span ng-show="myForm.dataContratacao.$error.required">Este é um campo requerido</span>
-	                                  <span ng-show="myForm.dataContratacao.$invalid">Este valor é inválido</span>
-                                  </div>
-                              </div>
-                          </div>
-                      </div>
-                      
-                      <div class="row">
-                          <div class="form-group col-md-12">
-                              <label class="col-md-2 control-lable" for="salario">Salário</label>
-                              <div class="col-md-7">
-                                  <input type="text" ng-model="ctrl.func.salario" id="salario" class="salario form-control input-sm" placeholder="Entre com o salário" required/>
-                                  <div class="has-error" ng-show="myForm.$dirty">
-	                                  <span ng-show="myForm.salario.$error.required">Este é um campo requerido</span>
-	                                  <span ng-show="myForm.salario.$invalid">Este valor é inválido</span>
-                                  </div>
-                              </div>
-                          </div>
-                      </div>
-                      
-                      <div class="row">
-                          <div class="form-group col-md-12">
-                              <label class="col-md-2 control-lable" for="sex">Sexo</label>
-                              <div class="col-md-7">
-	                               <label><input type="radio" ng-model="ctrl.func.sexo" value="Feminino" ng-required="!ctrl.func.sexo">Feminino</label><br/>
-	                               <label><input type="radio" ng-model="ctrl.func.sexo" value="Masculino" ng-required="!ctrl.func.sexo">Masculino</label>
-	                               <div class="has-error" ng-show="myForm.$dirty">
-	                           			<span ng-show="myForm.sex.$error.required">Este é um campo requerido</span>
-	                           	   </div>
-                               </div>
-                          </div>
-                      </div>
-                      
-                      <div class="row">
-                          <div class="form-group col-md-12">
-                              <label class="col-md-2 control-lable" for="mesFavorito">Mês Favorito</label>
-                              <div class="col-md-7">
-	                              <select name="mesFavorito" ng-model="ctrl.func.mesFavorito" ng-options="opt as opt for opt in meses" ng-init="selected='Março'" required />
-	                              <div class="has-error" ng-show="myForm.$dirty">
-	                              	<span ng-show="myForm.mesFavorito.$error.required">Este é um campo requerido</span>
-                              	  </div>
-                              </div>
-                          </div>
-                      </div>
-
-                      <div class="row">
-                          <div class="form-group col-md-12">
-                              <label class="col-md-2 control-lable" for="ctps">CTPS</label>
-                              <div class="col-md-7">
-                                  <input type="email" ng-model="ctrl.func.ctps" id="ctps" class="ctps form-control input-sm" placeholder="Entre com o número da CTPS" required/>
+                                  <input type="text" ng-model="ctrl.func.ctps" id="ctps" class="ctps form-control input-sm" placeholder="Entre com o número da CTPS" required/>
                                   <div class="has-error" ng-show="myForm.$dirty">
                                       <span ng-show="myForm.ctps.$error.required">Este é um campo requerido</span>
                                       <span ng-show="myForm.ctps.$invalid">Este valor é inválido</span>
@@ -149,7 +81,43 @@
                               </div>
                           </div>
                       </div>
-
+                        
+                      <div class="row">
+                          <div class="form-group col-md-12">
+                              <label class="col-md-2 control-lable" for="sexo">Sexo</label>
+                              <div class="col-md-7">
+	                               <label><input type="radio" ng-model="ctrl.func.sexo" value="Feminino" ng-required="!ctrl.func.sexo">Feminino</label><br/>
+	                               <label><input type="radio" ng-model="ctrl.func.sexo" value="Masculino" ng-required="!ctrl.func.sexo">Masculino</label>
+	                               <div class="has-error" ng-show="myForm.$dirty">
+	                           			<span ng-show="myForm.sexo.$error.required">Este é um campo requerido</span>
+	                           	   </div>
+                               </div>
+                          </div>
+                      </div>
+                      
+                      <div class="row">
+                          <div class="form-group col-md-12">
+                              <label class="col-md-2 control-lable" for="mes">Mês Favorito</label>
+                              <div class="col-md-7">
+	                              <select name="mes" id="mes" ng-model="ctrl.func.mesPreferencia" required>
+           					 		<option ng-repeat="option in data.availableOptions" value="{{option.id}}">{{option.name}}</option>
+	                              </select> 
+	                              <div class="has-error" ng-show="myForm.$dirty">
+	                              	<span ng-show="myForm.mesFavorito.$error.required">Este é um campo requerido</span>
+                              	  </div>
+                              </div>
+                          </div>
+                      </div>
+                      
+                      <div class="row">
+                          <div class="form-group col-md-12">
+                              <label class="col-md-2 control-lable" for="aceite">Concorda com os termos e condições?</label>
+                              <div class="col-md-7">
+	                               <label><input type="checkbox" ng-model="ctrl.aceite">Aceito</label>
+                               </div>
+                          </div>
+                      </div>
+                      
                       <div class="row">
                           <div class="form-actions floatRight">
                               <input type="submit"  value="{{!ctrl.func.id ? 'Add' : 'Update'}}" class="btn btn-primary btn-sm" ng-disabled="myForm.$invalid">
@@ -161,18 +129,17 @@
           </div>
           <div class="panel panel-default">
                 <!-- Default panel contents -->
-              <div class="panel-heading"><span class="lead">Lista de Funcionários </span></div>
+              <div class="panel-heading-per"><span class="lead">Lista de Funcionários </span></div>
               <div class="tablecontainer">
                   <table class="table table-hover">
                       <thead>
                           <tr>
                               <th>ID.</th>
                               <th>Nome</th>
-                              <th>Data Contratação</th>
-                              <th>Salário</th>
+                              <th>CTPS</th>
                               <th>Sexo</th>
                               <th>Mês Favorito</th>
-                              <th>CTPS</th>
+                              <th>Aceite</th>
                               <th width="20%"></th>
                           </tr>
                       </thead>
@@ -180,13 +147,12 @@
                           <tr ng-repeat="f in ctrl.funcs">
                               <td><span ng-bind="f.id"></span></td>
                               <td><span ng-bind="f.nome"></span></td>
-                              <td><span ng-bind="f.dataContratacao"></span></td>
-                              <td><span ng-bind="f.salario"></span></td>
-                              <td><span ng-bind="f.sexo"></span></td>
-                              <td><span ng-bind="f.mesFavorito"></span></td>
                               <td><span ng-bind="f.ctps"></span></td>
+                              <td><span ng-bind="f.sexo"></span></td>
+                              <td><span ng-bind="f.mesPreferencia"></span></td>
+                              <td><span ng-bind="f.aceite"></span></td>
                               <td>
-                              <button type="button" ng-click="ctrl.edit(f)" class="btn btn-success custom-width">Editar</button>  <button type="button" ng-click="ctrl.remove(f.ctps)" class="btn btn-danger custom-width">Remover</button>
+                              <button type="button" ng-click="ctrl.edit(f.id)" class="btn btn-success custom-width">Editar</button>  <button type="button" ng-click="ctrl.remove(f.id)" class="btn btn-danger custom-width">Remover</button>
                               </td>
                           </tr>
                       </tbody>

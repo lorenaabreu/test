@@ -1,29 +1,24 @@
-# Test
+# Projeto
 
-O objetivo é criar um fomulário de cadastro e armazenar as informações digitadas no banco de dados, neste projeto, utilize o Spring Framework para o MVC e persistência de dados juntamente com o Hibernate. Após a finalização faça commit e envie o link para esdras.tavares@fiveware.com.br
+Cadastro de funcionários.
 
-# Dicas
+# Sobre
 
-1 - De um fork neste projeto, clone e importe no eclipse
+- Projeto que irá contemplar o cadastro de funcionários on-line. 
+ 
+- Nesta primeira fase conta com um pequeno formulário.
 
-2 - Crie 2 módulos "maven" com os seguintes nomes:
+# Tecnologia
 
-  - fiveware-test-service (jar)
-  - fiveware-test-web (war)
-  
-Observe que já existe um "parent" e o fiveware-test-model(jar)
+- Java
 
-3 - Configure o Spring MVC no projeto web(fiveware-test-web), essa configuração deve ser SEM XML.
+# Frameworks
 
-4 - Crie um formulário qualquer de cadastro que tenha no mínimo os seguintes elementos:
+- AngularJS com ngResource
+- Spring MVC 4
+- Hibernate 4
+- Hibernate Validator 5
 
-  - Campo de texto
-  - Checkbox
-  - Combobox
-  - radio
-  
-O envio dos dados do formulário deve ser via AJAX
+# Persistencia
 
-5 - Crie o modelo de dados para este formulário no MySQL e também a entidade no módulo fiveware-test-model
-
-6 - Implemente todas as camadas, a view chamando o controller, o controller chamando o service e o service invocando o repositório.
+- DB MySQL

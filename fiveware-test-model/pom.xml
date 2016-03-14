@@ -10,19 +10,36 @@
     <version>0.0.1-SNAPSHOT</version>
   </parent>
   
+  <properties>
+  	<joda-time.version>2.9.2</joda-time.version>
+	<org.jandira.version>5.0.0.GA</org.jandira.version>
+	<mysql.version>5.1.38</mysql.version>
+  </properties>
+ 
   <dependencies>
-
-		<dependency>
-			<groupId>org.hibernate</groupId>
-			<artifactId>hibernate-core</artifactId>
-			<version>${org.hibernate.version}</version>
-		</dependency>
-
-		<dependency>
-			<groupId>org.hibernate</groupId>
-			<artifactId>hibernate-validator</artifactId>
-			<version>${org.hibernate.version}</version>
-		</dependency>
-
-	</dependencies>
+ 	
+  	<dependency>
+		<groupId>org.jadira.usertype</groupId>
+		<artifactId>usertype.core</artifactId>
+		<version>${org.jandira.version}</version>
+	</dependency>
+	
+	<dependency>
+        <groupId>joda-time</groupId>
+        <artifactId>joda-time</artifactId>
+        <version>${joda-time.version}</version>
+    </dependency>
+    
+	<dependency>
+		<groupId>org.hibernate</groupId>
+		<artifactId>hibernate-entitymanager</artifactId>
+		<version>${org.hibernate.version}</version>
+	</dependency>
+			
+	<dependency>
+		<groupId>mysql</groupId>
+		<artifactId>mysql-connector-java</artifactId>
+		<version>${mysql.version}</version>
+	</dependency>
+  </dependencies>
 </project>

@@ -1,28 +1,19 @@
 package org.fiveware.test.model;
 
-import java.math.BigDecimal;
-
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Table;
-import javax.validation.constraints.Digits;
-import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Size;
- 
-import org.hibernate.annotations.Type;
 import org.hibernate.validator.constraints.NotEmpty;
-import java.time.LocalDate;
-import org.springframework.format.annotation.DateTimeFormat;
 
 /**
- * Entity funcionario
+ * Entity Novo Funcionario
  * @author Lorena Abreu
  *
  */
-
 @Entity
 @Table(name="FUNCIONARIO")
 public class Funcionario {
@@ -31,34 +22,28 @@ public class Funcionario {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id;
  
-    @Size(min=3, max=50)
+	@Size(min=3, max=50)
     @Column(name = "NOME", nullable = false)
     private String nome;
- 
-    @NotNull
-    @DateTimeFormat(pattern="dd/MM/yyyy") 
-    @Column(name = "DATA_CONTRATACAO", nullable = false)
-    @Type(type="org.jadira.usertype.dateandtime.joda.PersistentLocalDate")
-    private LocalDate dataContratacao;
- 
-    @NotNull
-    @Digits(integer=8, fraction=2)
-    @Column(name = "SALARIO", nullable = false)
-    private BigDecimal salario;
-    
-    @NotEmpty
+   
+	@NotEmpty
     @Column(name = "SEXO", nullable = false)
     private String sexo;
-    
-    @NotEmpty
+
+	@NotEmpty
     @Column(name = "MES_PREFERENCIA", nullable = false)
     private String mesPreferencia;
      
-    @NotEmpty
+	@NotEmpty
     @Column(name = "CTPS", unique=true, nullable = false)
     private String ctps;
+    
+	@NotEmpty
+    @Column(name = "ACEITE", nullable = false)
+    private String aceite;
  
-    public int getId() {
+    
+	public int getId() {
         return id;
     }
  
@@ -72,22 +57,6 @@ public class Funcionario {
  
     public void setNome(String nome) {
         this.nome = nome;
-    }
- 
-    public LocalDate getDataContratacao() {
-        return dataContratacao;
-    }
- 
-    public void setDataContratacao(LocalDate dataContratacao) {
-        this.dataContratacao = dataContratacao;
-    }
- 
-    public BigDecimal getSalario() {
-        return salario;
-    }
- 
-    public void setSalario(BigDecimal salario) {
-        this.salario = salario;
     }
  
     public String getSexo(){
@@ -113,6 +82,14 @@ public class Funcionario {
     public void setCtps(String ctps) {
         this.ctps = ctps;
     }
+    
+    public String getAceite() {
+		return aceite;
+	}
+
+	public void setAceite(String aceite) {
+		this.aceite = aceite;
+	}
  
     @Override
     public int hashCode() {
@@ -144,8 +121,7 @@ public class Funcionario {
  
     @Override
     public String toString() {
-        return "Funcionario [id=" + id + ", nome=" + nome + ", dataContratacao="
-                + dataContratacao + ", salario=" + salario + ", sexo=" + sexo 
+        return "Funcionario [id=" + id + ", nome=" + nome + ", sexo=" + sexo 
                 +", mesPreferencia=" + mesPreferencia +", ctps=" + ctps + "]";
     }
 	
